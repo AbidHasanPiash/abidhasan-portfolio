@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-slate-900 text-slate-300 h-screen font-main overflow-hidden">
         <Navbar/>
-        <div className="text-7xl">
+        <div className="text-7xl text-center">
             <Outlet/>
         </div>
     </div>
