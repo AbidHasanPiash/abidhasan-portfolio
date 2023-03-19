@@ -5,6 +5,8 @@ import {SiReact, SiNodedotjs, SiHtml5, SiCss3, SiJavascript, SiTailwindcss, SiFi
 import {FiSquare, FiMinus} from 'react-icons/fi';
 
 export default function Hero() {
+  const text = 'I love to work as a Frontend developer with component-based UI design like React.';
+  const text2 = 'Hello.';
   return (
     <div className='max-w-full grid grid-cols-2 gap-4 m-3'>
       <div className='col-span-2 w-96 mt-4 flex flex-col overflow-hidden rounded-xl ring-1 ring-purple-900 shadow-2xl shadow-purple-500'>
@@ -23,8 +25,25 @@ export default function Hero() {
         />
       </div>
       <div className='col-span-2 lg:col-span-1 lg:col-start-1 my-5 lg:py-10 pr-10 text'>
-        <h1>Hello.</h1>
-        <h1>I love to work as a Frontend developer with component-based UI design like <span className='text-purple-400'>React.</span> </h1>
+        <h1>
+          {text2.split('').map((char, index) => (
+            <span key={index} className="inline-block hover:text-purple-800">
+              {char}
+            </span>
+          ))}
+        </h1>
+        <h1>
+          {text.split(' ').map((word, index) => (
+            <span key={index}>
+              {word.split('').map((char, index) => (
+                <span key={index} className="inline-block hover:text-purple-800">
+                  {char}
+                </span>
+              ))}
+              {' '}
+            </span>
+          ))}
+        </h1>
       </div>
       <div className='col-start-1 col-span-2 lg:col-start-2 h-full w-full mt-4 flex flex-col rounded-xl ring-1 ring-purple-900 shadow-2xl shadow-purple-500 hover:scale-105 duration-300'>
         <div className='flex items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
