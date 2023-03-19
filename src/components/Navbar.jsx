@@ -20,8 +20,10 @@ export default function Navbar() {
         <ul className={`hidden md:flex items-center justify-center text-xl space-x-5`}>
             {navMenuItem.map((item, index) => (
                 <li key={index} className={`px-3 rounded-full ${location.pathname  === item.link ? 'ring-2 ring-purple-500' : 'hover:text-slate-200 hover:scale-105'} duration-200`}>
-                    <NavLink to={item.link}>
-                        {item.title}
+                    <NavLink to={item.link} className='flex space-x-2'>
+                        <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> ˂  </p>
+                        <p>{item.title}</p>
+                        <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> /˃ </p>
                     </NavLink>
                 </li>
             ))}
@@ -49,8 +51,10 @@ export default function Navbar() {
             <h1 className="text-center text-5xl mb-6">Logo</h1>
             {navMenuItem.map((item, index) => (
                 <li key={index} className={`text-3xl px-3 rounded-full ${location.pathname  === item.link ? 'ring-2 ring-purple-500' : 'hover:text-slate-200 hover:scale-105'} my-3 mx-8 duration-200`}>
-                    <NavLink to={item.link}>
-                        {item.title}
+                    <NavLink to={item.link} className='flex space-x-2'>
+                        <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> ˂  </p>
+                        <p>{item.title}</p>
+                        <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> /˃ </p>
                     </NavLink>
                 </li>
             ))}
