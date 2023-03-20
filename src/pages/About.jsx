@@ -16,7 +16,7 @@ export default function About() {
               <RiCloseFill size={25}/>
             </div>
           </div>
-          <div className='lg:text-2xl text-lg p-6 z-0'>
+          <div className='lg:text-2xl text-lg p-6'>
             <h1>Hello.</h1>
             <div className='flex space-x-5'>
               <h1>I am </h1>
@@ -25,6 +25,7 @@ export default function About() {
                   strings: ['Abid Hasan', 'a Fronted Developer'],
                   autoStart: true,
                   loop: true,
+                  cursorClassName:'Typewriter__wrapper'
                 }}
               />
             </div>
