@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { SiGithub, SiLinkedin, SiGmail, SiFacebook } from "react-icons/si";
 
 export default function Contact() {
@@ -6,6 +7,12 @@ export default function Contact() {
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const socialLinks = [
+    {title:'Github', icon:<SiGithub size={40}/>, link:'https://github.com/AbidHasanPiash'},
+    {title:'LinkedIn', icon:<SiLinkedin size={40}/>, link:'https://www.linkedin.com/in/abidhasanpiash/'},
+    {title:'Gmail', icon:<SiGmail size={40}/>, link:'mailto:mp.abidhasan@gmail.com'},
+    {title:'Facebook', icon:<SiFacebook size={40}/>, link:'https://www.facebook.com/meghpiash2'}
+  ]
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,30 +61,16 @@ export default function Contact() {
         <div className="flex flex-col items-center justify-center">
           <h1>Please checkout my Social links.</h1>
           <div className="p-3 flex space-x-5">
-            <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
-              <SiGithub size={40} />
-              <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">
-                Github
-              </span>
-            </div>
-            <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
-              <SiLinkedin size={40} />
-              <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">
-                LinkedIn
-              </span>
-            </div>
-            <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
-              <SiGmail size={40} />
-              <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">
-                Gmail
-              </span>
-            </div>
-            <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
-              <SiFacebook size={40} />
-              <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">
-                Facebook
-              </span>
-            </div>
+            {socialLinks.map((social, index) => (
+              <Link to={social.link} key='index'>
+                <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
+                  {social.icon}
+                  <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">
+                    {social.title}
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
