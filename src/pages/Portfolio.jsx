@@ -22,11 +22,11 @@ export default function Portfolio() {
     },
   ];
   return (
-    <div className=''>
-      <h1>Portfolio</h1>
-      <div className='flex w-full'>
+    <div className='m-3'>
+      <h1 className='text-2xl'>Websites.</h1>
+      <div className='flex flex-col lg:flex-row w-full'>
         {/* Project Preview */}
-        <div className='w-4/6 m-3 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
+        <div className='lg:w-4/6 w-full my-3 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
           <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
             <h1>{selected.name ? selected.name : 'String Lab Solution'}</h1>
             <div className='flex items-center justify-center space-x-3'>
@@ -35,10 +35,14 @@ export default function Portfolio() {
               <RiCloseFill size={25}/>
             </div>
           </div>
-          <iframe src={selected.link ? selected.link : 'https://stringlabsolutions.vercel.app/'} className='rounded-b-xl' title="Example Website" width="100%" height="600px" />
+          <iframe 
+            src={selected.link ? selected.link : 'https://stringlabsolutions.vercel.app/'} 
+            className='rounded-b-xl w-full h-[600px]' 
+            title="Example Website"
+          />
         </div>
         {/* Project List */}
-        <div className='w-2/6 m-3 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
+        <div className='lg:w-2/6 w-full lg:m-3 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
           <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
             <h1>Project.</h1>
             <div className='flex items-center justify-center space-x-3'>
@@ -47,7 +51,7 @@ export default function Portfolio() {
               <RiCloseFill size={25}/>
             </div>
           </div>
-          <div className='h-[600px]'>
+          <div className='lg:h-[500px] h-fit'>
           {projects.map((project, index) => (
             <div 
               key={index} 
