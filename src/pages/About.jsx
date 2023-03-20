@@ -16,7 +16,7 @@ export default function About() {
               <RiCloseFill size={25}/>
             </div>
           </div>
-          <div className='lg:text-2xl text-lg p-6'>
+          <div className='lg:text-2xl text-lg p-6 z-0'>
             <h1>Hello.</h1>
             <div className='flex space-x-5'>
               <h1>I am </h1>

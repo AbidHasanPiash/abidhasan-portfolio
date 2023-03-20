@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
   return (
-    <div className="w-screen h-fit">
+    <div className="w-screen h-fit z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto py-4 px-6">
         <div>
             logo
