@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {RiCloseFill} from 'react-icons/ri';
 import {FiSquare, FiMinus} from 'react-icons/fi';
+import {SiReact, SiNodedotjs, SiMongodb, SiDaisyui, SiTailwindcss, SiFirebase} from 'react-icons/si';
 
 export default function Portfolio() {
   const [selected, setSelected] = useState({});
@@ -10,18 +11,21 @@ export default function Portfolio() {
       link:'https://stringlabsolutions.vercel.app/', 
       category:'Full stuck',
       discription:'React, Tailwind CSS, Express Js, Mongodb',
+      discription2: [<SiReact/>, <SiTailwindcss/>, <SiNodedotjs/>, <SiMongodb/>] ,
     },
     {
       name:'Bhujon', 
       link:'https://bhojon-39d34.web.app', 
       category:'Frontend',
-      discription:'React, Tailwind CSS, Daysi UI, Firebase'
+      discription:'React, Tailwind CSS, Daysi UI, Firebase',
+      discription2: [<SiReact/>, <SiTailwindcss/>, <SiDaisyui/>, <SiFirebase/>] ,
     },
     {
       name:'Bonik', 
       link:'https://inventory-managemnt-system.web.app/', 
       category:'Frontend',
-      discription:'React, Tailwind CSS, Firebase'
+      discription:'React, Tailwind CSS, Firebase',
+      discription2: [<SiReact/>, <SiTailwindcss/>, <SiFirebase/>] ,
     },
   ];
   return (
@@ -60,14 +64,18 @@ export default function Portfolio() {
               key={index} 
               onClick={()=>setSelected(project)}
               className={`${selected.name === project.name ? 'ring-1 ring-purple-900 shadow shadow-purple-900' : ' hover:bg-purple-900 hover:bg-opacity-40'}
-              text-xl p-2 m-2 rounded-xl cursor-pointer`}>
-              <div className='flex'>
+              p-2 m-2 rounded-xl cursor-pointer`}>
+              <div className='flex lg:text-2xl text-xl '>
                 <p>{index+1}.</p>
                 <h1>{project.name}</h1> 
               </div>
-              <div className='text-right'>
+              <div className='flex items-center justify-between text-lg py-3 px-6'>
                 <p>{project.category}</p>
-                <p className='text-sm'>{project.discription}</p>
+                <div className='flex space-x-3'>
+                  {project.discription2 && project.discription2.map((des, index)=>(
+                    <span key={index} className='text-xl'>{des}</span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
