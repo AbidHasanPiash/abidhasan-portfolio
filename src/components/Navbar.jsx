@@ -44,7 +44,7 @@ export default function Navbar() {
         </button>
         <ul 
             className={`${isOpen ? 'block fixed top-0 left-0 ease-in-out duration-500' : 'ease-in-out duration-500 fixed -left-full'} 
-                pt-16 bg-slate-800 md:hidden text-xl fixed left-0 top-0 w-[60%] h-full border-r border-purple-900 shadow-2xl shadow-purple-800`}
+                pt-16 bg-slate-800 md:hidden text-xl fixed left-0 top-0 w-[70%] h-full border-r border-purple-900 shadow-2xl shadow-purple-800`}
             >
             <h1 className="text-center text-5xl mb-6">Logo</h1>
             {navMenuItem.map((item, index) => (
