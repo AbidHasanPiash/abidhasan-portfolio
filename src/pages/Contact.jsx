@@ -62,7 +62,7 @@ export default function Contact() {
           <h1>Please checkout my Social links.</h1>
           <div className="p-3 flex space-x-5">
             {socialLinks.map((social, index) => (
-              <Link to={social.link} key='index'>
+              <Link to={social.link} target="_blank" key={index}>
                 <div className="group inline-flex items-center justify-center space-x-2 hover:text-purple-500 cursor-pointer">
                   {social.icon}
                   <span className="scale-0 text-[0px] group-hover:text-lg group-hover:scale-100 duration-200">

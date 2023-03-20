@@ -19,7 +19,7 @@ export default function Hero() {
         <img 
           src={ProfilePicture} 
           alt="ProfilePicture"
-          className='mx-auto object-cover hover:rotate-3 hover:scale-110 duration-300'
+          className='mx-auto object-cover hover:scale-110 duration-300'
         />
       </div>
       <div className='col-span-2 lg:col-span-1 lg:col-start-1 my-5 lg:py-10 pr-10 text'>
