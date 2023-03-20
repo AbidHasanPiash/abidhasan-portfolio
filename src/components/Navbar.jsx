@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
   return (
-    <div className="w-screen h-fit z-50">
+    <div className="w-screen h-fit object-top">
       <div className="flex items-center justify-between max-w-7xl mx-auto py-4 px-6">
         <div>
             logo
@@ -48,7 +48,7 @@ export default function Navbar() {
             >
             <h1 className="text-center text-5xl mb-6">Logo</h1>
             {navMenuItem.map((item, index) => (
-                <li key={index} className={`text-2xl px-3 rounded-full ${location.pathname  === item.link ? 'ring-2 ring-purple-500' : 'hover:text-slate-200 hover:scale-105'} my-3 mx-8 duration-200`}>
+                <li key={index} onClick={() => setIsOpen(!isOpen)} className={`text-2xl px-3 rounded-full ${location.pathname  === item.link ? 'ring-2 ring-purple-500' : 'hover:text-slate-200 hover:scale-105'} my-3 mx-8 duration-200`}>
                     <NavLink to={item.link} className='flex space-x-2'>
                         <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> ˂  </p>
                         <p>{item.title}</p>
