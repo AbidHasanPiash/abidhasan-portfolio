@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
   return (
-    <div className="w-screen h-fit object-top">
+    <div className="w-screen h-fit object-top select-none">
         <div className="flex items-center justify-between max-w-7xl mx-auto py-4 px-6">
             <div>
                 <img 
@@ -36,13 +36,13 @@ export default function Navbar() {
             <button className="md:hidden flex flex-col h-6 w-12 justify-center items-center group" onClick={() => setIsOpen(!isOpen)} >
                 <div className={`${hamburgerLine} ${
                     isOpen
-                    ? "rotate-45 translate-y-1.5 opacity-50 group-hover:opacity-100 scale-[250%]"
+                    ? "rotate-45 translate-y-1.5 opacity-50 group-hover:opacity-100 scale-[150%]"
                     : "opacity-50 group-hover:opacity-100"
                 }`}
                 />
                 <div className={`${hamburgerLine} ${
                     isOpen
-                    ? "-rotate-45 -translate-y-1.5 opacity-50 group-hover:opacity-100 scale-[250%]"
+                    ? "-rotate-45 -translate-y-1.5 opacity-50 group-hover:opacity-100 scale-[150%]"
                     : "opacity-50 group-hover:opacity-100"
                 }`}
                 />
