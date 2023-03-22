@@ -14,6 +14,13 @@ export default function Portfolio() {
       discription2: [<SiReact/>, <SiTailwindcss/>, <SiNodedotjs/>, <SiMongodb/>] ,
     },
     {
+      name:'CreativeHI admin', 
+      link:'https://creativehidemo.vercel.app/', 
+      category:'Frontend',
+      discription:'React, Tailwind CSS, Firebase',
+      discription2: [<SiReact/>, <SiTailwindcss/>, <SiFirebase/>] ,
+    },
+    {
       name:'Bhujon', 
       link:'https://bhojon-39d34.web.app', 
       category:'Frontend',
@@ -44,7 +51,7 @@ export default function Portfolio() {
           </div>
           <iframe 
             src={selected.link ? selected.link : 'https://stringlabsolutions.vercel.app/'} 
-            className='rounded-b-xl w-full h-[600px]' 
+            className='bg-white rounded-b-xl w-full h-[600px]' 
             title="Example Website"
           />
         </div>
@@ -59,29 +66,30 @@ export default function Portfolio() {
             </div>
           </div>
           <div className='lg:h-[500px] h-fit'>
-          {projects.map((project, index) => (
-            <div 
-              key={index} 
-              onClick={()=>setSelected(project)}
-              className={`p-2 m-2 rounded-xl cursor-pointer ring-1 ring-purple-900 shadow shadow-purple-900
-                ${selected.name === project.name 
-                  ? 'bg-opacity-40 bg-purple-900' 
-                  : ''
-                }`}>
-              <div className='flex lg:text-xl '>
-                <p>{index+1}.</p>
-                <h1>{project.name}</h1> 
-              </div>
-              <div className='flex items-center justify-between lg:text-lg py-3 px-6'>
-                <p>{project.category}</p>
-                <div className='flex space-x-3'>
-                  {project.discription2 && project.discription2.map((des, index)=>(
-                    <span key={index} className='lg:text-xl'>{des}</span>
-                  ))}
+            <p className='text-xs lg:text-lg text-center p-2'>Please select on to preview.</p>
+            {projects.map((project, index) => (
+              <div 
+                key={index} 
+                onClick={()=>setSelected(project)}
+                className={`p-2 m-2 rounded-xl cursor-pointer ring-1 ring-purple-900 shadow shadow-purple-900
+                  ${selected.name === project.name 
+                    ? 'bg-opacity-40 bg-purple-900' 
+                    : ''
+                  }`}>
+                <div className='flex lg:text-xl '>
+                  <p>{index+1}.</p>
+                  <h1>{project.name}</h1> 
+                </div>
+                <div className='flex items-center justify-between lg:text-lg py-3 px-6'>
+                  <p>{project.category}</p>
+                  <div className='flex space-x-3'>
+                    {project.discription2 && project.discription2.map((des, index)=>(
+                      <span key={index} className='lg:text-xl'>{des}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </div>
