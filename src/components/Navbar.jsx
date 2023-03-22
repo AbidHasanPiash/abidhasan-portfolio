@@ -6,7 +6,6 @@ export default function Navbar() {
   const navMenuItem = [
     { title: "Home", link: "/" },
     { title: "Portfolio", link: "/portfolio" },
-    { title: "About", link: "/about" },
     { title: "Contact", link: "/contact" },
   ];
   const location = useLocation();
