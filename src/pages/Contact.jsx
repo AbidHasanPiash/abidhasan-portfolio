@@ -94,6 +94,19 @@ export default function Contact() {
               </ul>
             </div>
           </div>
+
+          <div className="bg-gray-900 rounded-lg overflow-y-scroll scrollbar-thumb-gray-500 scrollbar-track-gray-900">
+            <pre className="text-white text-sm font-mono p-4">
+              {/* text goes here */}
+              <span className="text-gray-500 mr-2">1</span>Line 1
+              <br />
+              <span className="text-gray-500 mr-2">2</span>Line 2
+              <br />
+              <span className="text-gray-500 mr-2">3</span>Line 3
+              <br />
+              {/* more lines go here */}
+            </pre>
+          </div>
         </div>
         {/* contact form */}
         <div>
