@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'neon': '0px 5px 50px 12px',
+      },
       fontFamily: {
         main: ['Space Mono', 'monospa']
       }

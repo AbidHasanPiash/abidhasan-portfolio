@@ -41,98 +41,71 @@ export default function Contact() {
   return (
     <div>
       <div className="flex flex-col space-y-10">
-        {/* address  */}
-        <div className="m-3 lg:text-lg">
-          <div className="flex items-center justify-start space-x-3">
-            <TbLocationFilled />
-            <p>Banasree, Rampura, Dhaka-1219</p>
-          </div>
-          <div className="flex items-center justify-start space-x-3">
-            <ImPhone />
-            <Link to={"tel:01789507895"}>
-              <p>01789507895</p>
-            </Link>
-          </div>
-
-          <div className=" shadow-lg rounded-lg">
-            <h2 className="lg:text-lg font-bold mb-4">About Me</h2>
-            <p className="mb-4">
-              Hi there! My name is Abid Hasan and I'm a junior frontend web
-              developer. I have 1 years of experience
-              working with web technologies, including [list of relevant
-              technologies or frameworks you have experience with].
+        <div className="m-3 grid grid-cols-2">
+          {/* About Me  */}
+          <div className="my-5 mx-2 text-justify lg:col-span-1 col-span-2">
+            <h2 className="lg:text-xl text-lg font-bold mb-4">
+              About Me.
+            </h2>
+            <p className="mb-4 lg:text-md text-sm">
+              Hi there! My name is Abid Hasan and I'm a frontend developer.
+              I have a year of experience working with web technologies,
+              including HTML, CSS, React and Tailwind CSS.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 lg:text-md text-sm">
               I'm passionate about creating intuitive, user-friendly web
               experiences that make people's lives easier. In my free time, I
               enjoy exploring new technologies, reading tech blogs, and building
               side projects to practice my skills.
             </p>
-            <p className="mb-4">
-              If you'd like to learn more about my experience and skills, please
-              check out my resume and portfolio at [insert links here]. I'm also
-              open to new opportunities, so please don't hesitate to get in
-              touch if you think we'd be a good fit!
-            </p>
-          </div>
-
-          <div className="my-5 mx-2">
-            <h1 className="lg:text-3xl text-xl py-4">Educational Background</h1>
             <div>
-              <h1 className="lg:text-2xl text-sm">
-                Bachelor of Science, Computer Science and Engineering
-              </h1>
-              <h2 className="lg:text-xl text-xs pt-3">
-                Bangladesh Army University of Science & Technology (BAUST)
-              </h2>
-              <p className="lg:text-xl text-xs">November 2016 - April 2021</p>
-              <ul className="list-disc ml-5 py-5 lg:text-xl text-xs">
-                <li>Intensive course with core computer science topics.</li>
-                <li>C, C++, Java, Data Structures, Algorithms, OOP, DBMS.</li>
-                <li>Android application development.</li>
-                <li>Different software design patterns.</li>
-              </ul>
+              <div className="flex items-center justify-start space-x-3">
+                <TbLocationFilled />
+                <p>Banasree, Rampura, Dhaka-1219</p>
+              </div>
+              <div className="flex items-center justify-start space-x-3">
+                <ImPhone />
+                <Link to={"tel:01789507895"}>
+                  <p>01789507895</p>
+                </Link>
+              </div>
             </div>
           </div>
-
-          <div className="bg-gray-900 rounded-lg overflow-y-scroll scrollbar-thumb-gray-500 scrollbar-track-gray-900">
-            <pre className="text-white text-sm font-mono p-4">
-              {/* text goes here */}
-              <span className="text-gray-500 mr-2">1</span>Line 1
-              <br />
-              <span className="text-gray-500 mr-2">2</span>Line 2
-              <br />
-              <span className="text-gray-500 mr-2">3</span>Line 3
-              <br />
-              {/* more lines go here */}
-            </pre>
+          {/* contact form */}
+          <div className="my-5 mx-2 lg:flex lg:flex-col lg:items-end lg:justify-end lg:col-span-1 col-start-1 col-span-2">
+            <h1 className="mx-3 lg:text-lg">Please send me your thought</h1>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col space-y-3 p-3"
+            >
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                className="lg:w-96 w-full h-8 bg-purple-900 bg-opacity-50 p-3 outline-none rounded focus:ring-2 ring-purple-600"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <textarea
+                placeholder="Your Message"
+                value={message}
+                className="lg:w-96 w-full h-36 bg-purple-900 bg-opacity-50 p-3 outline-none rounded focus:ring-2 ring-purple-600"
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <button
+                className="bg-purple-900 bg-opacity-50 mx-auto lg:mx-0 w-fit py-1 px-7 rounded-full hover:bg-opacity-100"
+                type="submit"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
-        {/* contact form */}
-        <div>
-          <h1 className="mx-3 lg:text-lg">Please send me your thought.</h1>
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-3 p-3">
-            <input
-              type="email"
-              placeholder="Your Email"
-              value={email}
-              className="lg:w-96 w-full h-8 bg-purple-900 bg-opacity-50 p-3 outline-none rounded focus:ring-2 ring-purple-600"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <textarea
-              placeholder="Your Message"
-              value={message}
-              className="lg:w-96 w-full h-36 bg-purple-900 bg-opacity-50 p-3 outline-none rounded focus:ring-2 ring-purple-600"
-              onChange={(e) => setMessage(e.target.value)}
-            />
-            <button
-              className="bg-purple-900 bg-opacity-50 mx-auto lg:mx-0 w-fit py-1 px-7 rounded-full hover:bg-opacity-100"
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
+        {/* Download Resume button */}
+        <button 
+          className="w-fit mx-auto font-extralight text-purple-400 border-2 border-purple-500 px-2 py-1 rounded-full select-none
+            hover:shadow-neon hover:bg-purple-500 hover:text-white hover:font-extrabold hover:shadow-purple-500"
+        > Download Resume
+        </button>
         {/* social media */}
         <div className="flex flex-col items-center justify-center">
           <h1>Please checkout my Social links.</h1>
