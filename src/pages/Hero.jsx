@@ -13,9 +13,9 @@ export default function Hero() {
         <div className='flex items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
           <h1>Abid Hasan.</h1>
           <div className='flex items-center justify-center space-x-3'>
-            <FiMinus size={20}/>
-            <FiSquare size={20}/>
-            <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
           </div>
         </div>
         <img 
@@ -30,9 +30,9 @@ export default function Hero() {
           <div className='flex items-center justify-between py-2 px-4 lg:text-lg border-b border-slate-600'>
             <h1>Command Prompt.</h1>
             <div className='flex items-center justify-center space-x-3'>
-              <FiMinus size={20}/>
-              <FiSquare size={20}/>
-              <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
             </div>
           </div>
           <div className='lg:text-xl p-6'>
@@ -56,9 +56,9 @@ export default function Hero() {
         <div className='flex items-center justify-between py-2 px-4 lg:text-xl border-b border-slate-600'>
           <h1>My Expertise.</h1>
           <div className='flex items-center justify-center space-x-3'>
-            <FiMinus size={20}/>
-            <FiSquare size={20}/>
-            <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
           </div>
         </div>
         <div className='p-3 space-y-5 lg:text-xl'>

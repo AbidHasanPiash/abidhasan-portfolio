@@ -30,16 +30,16 @@ export default function Portfolio() {
   ];
   return (
     <div className='m-3'>
-      <h1 className='text-2xl'>Websites.</h1>
-      <div className='flex flex-col lg:flex-row w-full'>
+      <h1 className='lg:text-xl pl-2'>Websites.</h1>
+      <div className='flex flex-col-reverse lg:flex-row w-full'>
         {/* Project Preview */}
         <div className='lg:w-4/6 w-full my-3 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
-          <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
+          <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 lg:text-lg border-b border-slate-600'>
             <h1>{selected.name ? selected.name : 'String Lab Solution'}</h1>
             <div className='flex items-center justify-center space-x-3'>
-              <FiMinus size={20}/>
-              <FiSquare size={20}/>
-              <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
             </div>
           </div>
           <iframe 
@@ -50,12 +50,12 @@ export default function Portfolio() {
         </div>
         {/* Project List */}
         <div className='lg:w-2/6 w-full lg:m-3 mt-4 rounded-xl border border-purple-900 shadow-2xl shadow-purple-900'>
-          <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 text-xl border-b border-slate-600'>
+          <div className='flex rounded-t-xl bg-purple-900 items-center justify-between py-2 px-4 lg:text-lg border-b border-slate-600'>
             <h1>Project.</h1>
             <div className='flex items-center justify-center space-x-3'>
-              <FiMinus size={20}/>
-              <FiSquare size={20}/>
-              <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
             </div>
           </div>
           <div className='lg:h-[500px] h-fit'>
@@ -63,17 +63,20 @@ export default function Portfolio() {
             <div 
               key={index} 
               onClick={()=>setSelected(project)}
-              className={`${selected.name === project.name ? 'ring-1 ring-purple-900 shadow shadow-purple-900' : ' hover:bg-purple-900 hover:bg-opacity-40'}
-              p-2 m-2 rounded-xl cursor-pointer`}>
-              <div className='flex lg:text-2xl text-xl '>
+              className={`p-2 m-2 rounded-xl cursor-pointer ring-1 ring-purple-900 shadow shadow-purple-900
+                ${selected.name === project.name 
+                  ? 'bg-opacity-40 bg-purple-900' 
+                  : ''
+                }`}>
+              <div className='flex lg:text-xl '>
                 <p>{index+1}.</p>
                 <h1>{project.name}</h1> 
               </div>
-              <div className='flex items-center justify-between text-lg py-3 px-6'>
+              <div className='flex items-center justify-between lg:text-lg py-3 px-6'>
                 <p>{project.category}</p>
                 <div className='flex space-x-3'>
                   {project.discription2 && project.discription2.map((des, index)=>(
-                    <span key={index} className='text-xl'>{des}</span>
+                    <span key={index} className='lg:text-xl'>{des}</span>
                   ))}
                 </div>
               </div>

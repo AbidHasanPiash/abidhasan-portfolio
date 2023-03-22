@@ -11,9 +11,9 @@ export default function About() {
           <div className='flex items-center justify-between py-2 px-4 text-lg border-b border-slate-600'>
             <h1>Command Prompt.</h1>
             <div className='flex items-center justify-center space-x-3'>
-              <FiMinus size={20}/>
-              <FiSquare size={20}/>
-              <RiCloseFill size={25}/>
+              <FiMinus size={15}/>
+              <FiSquare size={15}/>
+              <RiCloseFill size={20}/>
             </div>
           </div>
           <div className='lg:text-2xl text-lg p-6'>

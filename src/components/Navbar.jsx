@@ -67,7 +67,7 @@ export default function Navbar() {
                             className={`${location.pathname  === item.link 
                                 ? 'ring-2 ring-purple-500' 
                                 : 'hover:text-slate-200 hover:scale-105'}
-                                text-2xl px-3 rounded-full my-10 mx-8`
+                                lg:text-2xl px-3 rounded-full my-10 mx-8`
                         }>
                             <NavLink to={item.link} className='flex space-x-2'>
                                 <p className={`${location.pathname  === item.link ? 'block' : 'hidden'}`}> ˂  </p>
